@@ -1,33 +1,49 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>IP Address, Location, and Time Zone</title>
-</head>
-<body>
-    <h1>H2cked By Chill And Group Black Hawks Discord.gg/ix </h1>
-    
-    <p id="ipAddress"></p>
-    <p id="location"></p>
-    <p id="timeZone"></p>
-
-    <script>
-        fetch('https://api.ipify.org?format=json')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById("ipAddress").innerText = "Your IP Address: " + data.ip;
-            });
-
-        fetch('https://ipapi.co/json/')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById("location").innerText = "Your Location: " + data.city + ", " + data.region + ", " + data.country_name;
-                document.getElementById("timeZone").innerText = "Your Time Zone: " + data.timezone;
-            });
-    </script>
-</body>
-</html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- For responsiveness --> 
-    <title>H2ced By Grop Black Hawks</title>  <!-- Set title as H2ced By Grop Black Hawks -->  				     	         </head>  <body style="background: #000; color: rgb(255, 0, 0); font-family: Arial, sans-serif; text-align: center; padding: 50px 0;"><img src='https://media.discordapp.net/attachments/1138623769112485949/12397228473041556
+    <title>IP Info</title>
+    <style>
+        body {
+            background: black;
+            color: rgb(255, 0, 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+         }
+    </style>
+</head>
+<body>
+    <h2 style="color: #ff0000;"><a href="https://discord.gg/ix" target="_blank" rel="noopener noreferrer">hacked By Group Black Hawks discord.gg/ix <3 </a></h2>
+
+    <div id="info"></div>
+
+    <script>
+        const info = document.getElementById('info');
+
+        // Get IP information
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then((data) => {
+                info.innerHTML += `Your IP is: ${data.ip}<br>`;
+
+                // Get Geolocation information
+                fetch(`https://ipapi.co/${data.ip}/json/`)
+                    .then(response => response.json())
+                    .then((locationData) => {
+                        info.innerHTML += `Your location is: ${locationData.city}, ${locationData.region} -
+${locationData.country_name}<br>`;
+                        info.innerHTML += `Your timezone is: ${locationData.timezone}<br>`;
+                    });
+            });
+    </script>
+
+    <video width="500" height="500" controls autoplay loop muted playsinline style="position: fixed; top: 50%;
+left: 50%; transform: translate(-50%, -50%); min-width: 100%">
+        <source src="https://cdn.discordapp.com/attachments/1231943839766544525/1241172900338204733/0514_12_-_Trim.mp4?ex=66493bd7&is=6647ea57&hm=9f401ac578259bc4c8d2c29eb8965c58a6c1236aeec46a33eae445b50a4a2e9b&" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</body>
+</html>
