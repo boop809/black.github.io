@@ -17,29 +17,6 @@
 </head>
 <body>
     <h2 style="color: #ff0000;"><a href="https://discord.gg/ix" target="_blank" rel="noopener noreferrer">hacked By Group Black Hawks discord.gg/ix <3 </a></h2>
-
-    <div id="info"></div>
-
-    <script>
-        const info = document.getElementById('info');
-
-        // Get IP information
-        fetch('https://api.ipify.org?format=json')
-            .then(response => response.json())
-            .then((data) => {
-                info.innerHTML += `Your IP is: ${data.ip}<br>`;
-
-                // Get Geolocation information
-                fetch(`https://ipapi.co/${data.ip}/json/`)
-                    .then(response => response.json())
-                    .then((locationData) => {
-                        info.innerHTML += `Your location is: ${locationData.city}, ${locationData.region} -
-${locationData.country_name}<br>`;
-                        info.innerHTML += `Your timezone is: ${locationData.timezone}<br>`;
-                    });
-            });
-    </script>
-
     <video width="500" height="500" controls autoplay loop muted playsinline style="position: fixed; top: 50%;
 left: 50%; transform: translate(-50%, -50%); min-width: 100%">
         <source src="https://cdn.discordapp.com/attachments/1231943839766544525/1241172900338204733/0514_12_-_Trim.mp4?ex=66493bd7&is=6647ea57&hm=9f401ac578259bc4c8d2c29eb8965c58a6c1236aeec46a33eae445b50a4a2e9b&" type="video/mp4">
