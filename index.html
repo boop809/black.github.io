@@ -24,3 +24,48 @@ left: 50%; transform: translate(-50%, -50%); min-width: 100%">
     </video>
 </body>
 </html>
+<!DOCTYPE html>
+<html>
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>Page Title</title>
+            <style>
+                body {
+                    background-color: black;
+                    color: rgb(255, 0, 0);
+                    font-family: Arial, sans-serif;
+                 }
+            </style>
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        </head>
+    <body>
+       <h2 id="textElementId" style="position:absolute;">Hacked By AlAjMy</h2>
+    
+       <script>
+           $(document).ready(function(){
+               var leftPos = 50; // initial position on x-axis
+               var topPos = 100; // initial position on y-axis
+               $("#textElementId").css("left", leftPos + "px");
+               $("#textElementId").css("top", topPos + "px");
+    
+               setInterval(moveText, 5);
+    
+               function moveText() {
+                   leftPos++;
+                   topPos++;
+                   $("#textElementId").css("left", leftPos + "px");
+                   $("#textElementId").css("top", topPos + "px");
+    
+                   // When the text reaches the right side of the screen, reset its position to start again.
+                   if (leftPos > $(window).width() || topPos > $(window).height()) {
+                       leftPos = -$("#textElementId").outerWidth();
+                       topPos = -$("#textElementId").outerHeight();
+                       $("#textElementId").css("left", leftPos + "px");
+                       $("#textElementId").css("top", topPos + "px");
+                     }
+                 }
+             });
+        </script>
+    </body>
+    </html>
