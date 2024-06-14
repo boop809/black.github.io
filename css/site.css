@@ -1,0 +1,14 @@
+﻿body {
+}
+
+a.undecorated {
+    text-decoration: none;
+}
+
+a.undecorated:hover {
+    text-decoration: underline;
+}
+
+.medium-zoom-image--opened {
+    max-width: auto;
+}

@@ -1,0 +1,66 @@
+#mypopupOverlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(100, 100, 100, 0.85);
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    opacity: 0;
+}
+
+img.mypopup {
+    cursor: zoom-in;
+}
+
+.mypopup-fade-in {
+    animation-name: fadeIn;
+    animation-duration: 550ms;
+    animation-fill-mode: forwards;
+}
+
+.mypopup-fade-out {
+    animation-name: fadeOut;
+    animation-duration: 350ms;
+    animation-fill-mode: forwards;
+}
+
+#mypopupOverlay img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    display: block;
+    background-color: #a5a5a5;
+    border-color: #a5a5a5;
+    border-width: 10px;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+#mypopupOverlay.mypopup-fade-in img {
+    cursor: auto;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
