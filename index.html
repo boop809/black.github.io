@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>discord.gg/ix</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('images/51aea3393b8234a1e69d8713a0a58bc3.gif') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Verdana;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: #00f;
+      text-align: center;
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .image-container img {
+      width: 750px;
+      height: auto;
+      border: 2px solid #fff;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+    }
+
+    .info {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #ffffff;
+      text-shadow: 0px 0px 8px #fff, 0px 0px 15px #fff, 0px 0px 25px #fff;
+      letter-spacing: 2px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="image-container">
+    <img src="images/p_34927tu3j1.png" alt="Centered Image">
+  </div>
+
+  <audio autoplay="" loop="">
+    <source src="media/m_34921g5b61.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+<p style="opacity: 0%;"></p>
+  <p class="info style=" color:="" #fff;"="">Black Hawks Infiltrated Your Connection...</p>
+   <p class="info style=" color:="" #fff;"="">Join Us Discord.gg/ix</p>
+<p style="opacity: 0%;"></p>
+  <div class="info" id="ip-info">Loading IP...</div>
+
+  <script>
+    fetch("https://api.ipify.org?format=json")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("ip-info").innerHTML = `<strong>IP:</strong> ${data.ip}`;
+      })
+      .catch(() => {
+        document.getElementById("ip-info").textContent = "Failed to fetch IP.";
+      });
+  </script>
+
+
+</body></html>
